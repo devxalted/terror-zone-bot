@@ -1,5 +1,4 @@
-const fetch = require('node-fetch')
-const getTerrorZone = async ( client ) => {
+const getTerrorZone = async ( client, fetch ) => {
 
     const config = {
         method: 'GET',

@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits } = require('discord.js')
+const fetch = require('node-fetch')
 const {getTerrorZone} = require('./getTerrorZone')
 require('dotenv/config')
 
@@ -17,7 +18,7 @@ client.login(process.env.DISCORD_TOKEN).then( async (res, err) => {
 
 client.on('ready', async () => {
 
-    await getTerrorZone(client)
+    await getTerrorZone(client, fetch)
 
     // Ready
     console.log('Bot is ready.')
@@ -37,10 +38,10 @@ client.on('ready', async () => {
 
     // At :05 ping API
     setTimeout(async () => {
-        await getTerrorZone(client)
+        await getTerrorZone(client, fetch)
         // Set Interval for 1 Hour to ping API and post to channel
         setInterval(async () => {
-            await getTerrorZone(client)
+            await getTerrorZone(client, fetch)
         }, 3600000)
     }, waitTime)
 
