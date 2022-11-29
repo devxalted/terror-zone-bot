@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits } = require('discord.js')
-const { fetch } = require('node-fetch')
+const fetch = require('node-fetch')
 const {getTerrorZone} = require('./getTerrorZone')
 require('dotenv/config')
 
