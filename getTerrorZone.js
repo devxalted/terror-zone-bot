@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 const getTerrorZone = async ( client ) => {
 
     const config = {
