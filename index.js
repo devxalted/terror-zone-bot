@@ -18,10 +18,11 @@ client.login(process.env.DISCORD_TOKEN).then( async (res, err) => {
 
 client.on('ready', async () => {
 
-    await getTerrorZone(client, fetch)
-
     // Ready
-    console.log('Bot is ready.')
+    console.log('Bot is online.')
+
+    // Get current T-zone
+    await getTerrorZone(client, fetch)
 
     // Check time
     let time = new Date;
@@ -31,9 +32,9 @@ client.on('ready', async () => {
 
     // Determine time until next :05
     let waitTime
-    if (time !== 5) {
-        console.log(60- time + 5, 'minutes until the next zone is announced.')
-        waitTime = (60 - time + 5) * 60000
+    if (time !== 2) {
+        console.log(60- time + 2, 'minutes until the next zone is announced.')
+        waitTime = (60 - time + 2) * 60000
     }
 
     // At :05 ping API
