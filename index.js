@@ -16,12 +16,6 @@ client.login(process.env.DISCORD_TOKEN).then( async (res, err) => {
     if (err) console.error(err)
 })
 
-
-// // OAUTH login -- D2R PvP
-// client.login(process.env.DISCORD_TOKEN_PVP_CLUB).then( async (res, err) => {
-//     if (err) console.error(err)
-// })
-
 client.on('ready', async () => {
 
     // Ready
@@ -39,7 +33,7 @@ client.on('ready', async () => {
     // Determine time until next :02
     let waitTime
     if (time !== 2) {
-        console.log(60- time + 2, 'minutes until the next zone is announced.')
+        console.log(60 - time + 2, 'minutes until the next zone is announced.')
         waitTime = (60 - time + 2) * 60000
     }
 
