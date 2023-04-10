@@ -1,5 +1,4 @@
 const { Client, GatewayIntentBits } = require('discord.js')
-const fetch = require('node-fetch')
 const {getTerrorZone} = require('./getTerrorZone')
 require('dotenv/config')
 
@@ -22,7 +21,7 @@ client.on('ready', async () => {
     console.log('Bot is online.')
 
     // Get current T-zone
-    await getTerrorZone(client, fetch)
+    await getTerrorZone(client)
 
     // Check time
     let time = new Date;

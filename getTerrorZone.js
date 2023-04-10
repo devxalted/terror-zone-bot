@@ -1,7 +1,13 @@
-const getTerrorZone = async ( client, fetch ) => {
+const fetch = require('node-fetch')
+const getTerrorZone = async ( client) => {
 
     const config = {
         method: 'GET',
+        headers: {
+            'D2R-Contact': 'jake@exalted.dev',
+            'D2R-Platform': 'Discord',
+            'D2R-Repo': 'https://github.com/jlaflash95/terror-zone-bot'
+        }
     }
     let res = await fetch(`https://d2runewizard.com/api/terror-zone?token=${process.env.TRACKER_TOKEN}`, config)
     res = await res.json()
