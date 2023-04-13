@@ -1,7 +1,9 @@
 const fetch = require('node-fetch')
+const axios = require('axios')
 const getTerrorZone = async ( client) => {
 
     const config = {
+        url: `https://d2runewizard.com/api/terror-zone?token=${process.env.TRACKER_TOKEN}`,
         method: 'GET',
         headers: {
             'D2R-Contact': 'jake@exalted.dev',
@@ -9,8 +11,8 @@ const getTerrorZone = async ( client) => {
             'D2R-Repo': 'https://github.com/jlaflash95/terror-zone-bot'
         }
     }
-    let res = await fetch(`https://d2runewizard.com/api/terror-zone?token=${process.env.TRACKER_TOKEN}`, config)
-    res = await res.json()
+    let res = await axios(config)
+    res = await res.data
 
     // console.log(res.terrorZone.zone)
     // console.log(res.terrorZone.act)
