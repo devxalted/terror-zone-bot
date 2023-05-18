@@ -38,10 +38,10 @@ client.on('ready', async () => {
 
     // At :05 ping API
     setTimeout(async () => {
-        await getTerrorZone(client, fetch)
+        await getTerrorZone(client)
         // Set Interval for 1 Hour to ping API and post to channel
         setInterval(async () => {
-            await getTerrorZone(client, fetch)
+            await getTerrorZone(client)
         }, 3600000)
     }, waitTime)
 
